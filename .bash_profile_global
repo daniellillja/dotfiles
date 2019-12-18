@@ -1,11 +1,9 @@
-# Aliases
 alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g='git'
 alias t='task'
 alias v="$EDITOR"
 alias weather='curl wttr.in'
 
-# Functions #########
 fd() {
   DIR=`find * -maxdepth 1 -type d -print 2> /dev/null | fzf-tmux` \
     && cd "$DIR"
@@ -27,3 +25,18 @@ x() {
         fi
 }
 
+git config --global alias.s 'status'
+git config --global alias.aa 'add .'
+git config --global alias.a 'add'
+git config --global alias.cm 'commit -m'
+git config --global alias.c 'commit'
+git config --global alias.ph 'push'
+git config --global alias.l 'log'
+git config --global alias.co 'checkout'
+git config --global alias.br 'branch'
+git config --global alias.pho 'push -u origin HEAD'
+git config --global alias.fo 'fetch origin'
+git config --global alias.ap 'add --patch'
+git config --global alias.rb 'rebase'
+git config --global alias.f 'fetch'
+git config --global alias.cp 'cherry-pick'
