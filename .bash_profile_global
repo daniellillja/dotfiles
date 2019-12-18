@@ -28,4 +28,3 @@ x() {
 }
 
 # Shell Options
-shopt -s autocd
