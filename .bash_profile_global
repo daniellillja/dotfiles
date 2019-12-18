@@ -1,13 +1,8 @@
-source ~/.exports
-
 # Aliases
-alias brc='vim ~/.bash_profile && source ~/.bash_profile'
 alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias g='git'
-alias ls='ls -G'
 alias t='task'
-alias v='vim'
-alias vrc='vim ~/.vimrc'
+alias v="$EDITOR"
 alias weather='curl wttr.in'
 
 # Functions #########
@@ -32,3 +27,5 @@ x() {
         fi
 }
 
+# Shell Options
+shopt -s autocd

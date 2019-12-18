@@ -1,0 +1,5 @@
+# Aliases
+alias p="sudo pacman"
+
+# Other
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

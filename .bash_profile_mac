@@ -1,3 +1,4 @@
 source $(brew --prefix nvm)/nvm.sh
 
-alias clip=pbcopy
+alias clip='pbcopy'
+alias ls='ls -G'
