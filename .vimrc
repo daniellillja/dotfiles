@@ -10,6 +10,10 @@ autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab foldmethod=synt
 " Text
 autocmd FileType text set tabstop=2 shiftwidth=2 foldmethod=indent expandtab
 
+" Golang
+autocmd FileType go map <leader>r :!go run %<CR>
+autocmd FileType go map <leader>f :!go fmt %<CR><CR>
+
 " Store swap files globally
 set directory^=$HOME/.vim/tmp//
 
