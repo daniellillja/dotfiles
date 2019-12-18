@@ -1,0 +1,2 @@
+# ignore .cfg folders to avoid wierd recursion errors: https://www.atlassian.com/git/tutorials/dotfiles
+.cfg
