@@ -1,0 +1,36 @@
+source ~/.exports
+
+# Aliases
+alias brc='vim ~/.bash_profile && source ~/.bash_profile'
+alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias clip=pbcopy
+alias g='git'
+alias ls='ls -G'
+alias t='task'
+alias v='vim'
+alias vrc='vim ~/.vimrc'
+alias weather='curl wttr.in'
+
+# Functions #########
+fd() {
+  DIR=`find * -maxdepth 1 -type d -print 2> /dev/null | fzf-tmux` \
+    && cd "$DIR"
+}
+
+tma() {
+	tmux attach-session -t $(tmux ls | cut -d':' -f1 | fzf);
+}
+
+tmn() {
+	tmux new-session -s $1
+}
+
+x() {
+        local script_name="$(find $SCRIPTS_DIR/*.sh -type f -exec basename {} \; | fzf)"
+        if [[ ! -z "$script_name" ]]
+        then
+                source $SCRIPTS_DIR/"$script_name"
+        fi
+}
+
+source $(brew --prefix nvm)/nvm.sh
