@@ -1,44 +1,43 @@
-imap jk <ESC>
-set autoindent
 syntax enable
+
+" Global vim options
+set autoindent
+set directory^=$HOME/.vim/tmp// " store swap files globally
+set formatoptions-=cro " disable auto commenting
+set number
 set tabstop=4 shiftwidth=4
 set wildchar=<Tab> wildmenu wildmode=full
 
-" Javascript
-autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab foldmethod=syntax
-
-" Text
-autocmd FileType text set tabstop=2 shiftwidth=2 foldmethod=indent expandtab
-
-" Golang
-autocmd FileType go map <leader>r :!go run %<CR>
-autocmd FileType go map <leader>f :!go fmt %<CR><CR>
-
-" Store swap files globally
-set directory^=$HOME/.vim/tmp//
-
 " Plugins (vim-plug)
 call plug#begin()
-Plug 'tpope/vim-sensible'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'rking/ag.vim'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'masukomi/vim-markdown-folding'
+Plug '/usr/local/opt/fzf' " must have fzf installed
+Plug 'Shougo/deoplete.nvim' " must have python3 and run `pip3 install --user pynvim` before
 Plug 'blindFS/vim-taskwarrior'
 Plug 'dense-analysis/ale'
+Plug 'haya14busa/incsearch.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'masukomi/vim-markdown-folding'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'rking/ag.vim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+" svermeulen/vim-easyclip
+" tpope/vim-commentary
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
 
-nnoremap <Leader>F :Ag
-nnoremap <Leader>d :ALEGoToDefinition<CR>zO
-nnoremap <Leader>t :FZF<CR>
+" Mappings
+imap jk <ESC>
 map <Leader>f :ALEFix<CR>
-nnoremap <Leader>gd :ALEGoToDefinitionInSplit<CR>
+nnoremap <Leader>F :Ag
+nnoremap <Leader>T :FZF<CR>
+nnoremap <Leader>d :ALEGoToDefinition<CR>zO
+nnoremap <Leader>ltd :Ag --js --java todo-dlillja<CR>
+nnoremap <Leader>t :Buffers<CR>
+nnoremap <Leader>u :ALEFindReferences<CR>
 
-" Disable auto commenting
-set formatoptions-=cro
-
-set number
