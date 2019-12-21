@@ -2,3 +2,4 @@ source $(brew --prefix nvm)/nvm.sh
 
 alias clip='pbcopy'
 alias ls='ls -G'
+alias vim=$(brew --prefix)/bin/vim
