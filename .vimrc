@@ -25,6 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'jpalardy/vim-slime'
 " svermeulen/vim-easyclip
 " tpope/vim-commentary
 call plug#end()
@@ -41,3 +42,12 @@ nnoremap <Leader>ltd :Ag --js --java todo-dlillja<CR>
 nnoremap <Leader>t :Buffers<CR>
 nnoremap <Leader>u :ALEFindReferences<CR>
 
+" Pasting
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
