@@ -5,3 +5,8 @@ alias p="sudo pacman"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 shopt -s autocd
+
+# Auto start tmux session when connecting over SSH
+if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi

@@ -25,6 +25,14 @@ x() {
         fi
 }
 
+tw() {
+	task $1 mod wait:$2
+}
+
+td() {
+	task $1 del
+}
+
 git config --global alias.s 'status'
 git config --global alias.aa 'add .'
 git config --global alias.a 'add'
@@ -42,6 +50,8 @@ git config --global alias.f 'fetch'
 git config --global alias.cp 'cherry-pick'
 git config --global alias.rh 'reset --hard'
 git config --global alias.unstage 'reset'
+git config --global alias.d 'diff'
+git config --global alias.dc 'diff --cached'
 
 # Eternal bash history.
 # ---------------------
